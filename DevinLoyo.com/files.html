@@ -5,7 +5,7 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="description" content="Devin Loyo - IT Professional & Cybersecurity Specialist. Resources and tools.">
+        <meta name="description" content="Devin Loyo - Resources and Tools">
         <meta name="author" content="Devin Loyo">
 
         <title>Devin Loyo - Resources</title>
@@ -13,80 +13,237 @@
         <link rel="shortcut icon" type="image/icon" href="assets/logo/favicon.png"/>
        
         <link rel="stylesheet" href="assets/css/font-awesome.min.css">
-        <link rel="stylesheet" href="assets/css/animate.css">
         <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-        <link rel="stylesheet" href="assets/css/bootsnav.css" >    
-        <link rel="stylesheet" href="assets/css/style.css">
-        <link rel="stylesheet" href="assets/css/responsive.css">
 
         <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&subset=devanagari,latin-ext" rel="stylesheet">
 
         <style>
-            .files-section {
-                padding: 60px 0;
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
             }
-            .file-category {
-                margin-bottom: 40px;
-            }
-            .file-category h3 {
-                font-size: 24px;
-                margin-bottom: 20px;
+
+            body {
+                font-family: 'Poppins', sans-serif;
                 color: #333;
-                border-bottom: 2px solid #007bff;
-                padding-bottom: 10px;
+                background: #f5f7fa;
             }
-            .file-item {
-                background: #f8f9fa;
-                padding: 15px;
-                margin-bottom: 10px;
-                border-radius: 4px;
+
+            /* Navigation */
+            .navbar-custom {
+                background: white;
+                box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+                padding: 15px 0;
+                position: fixed;
+                width: 100%;
+                top: 0;
+                z-index: 1000;
+            }
+
+            .navbar-custom .container {
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
-                transition: all 0.3s ease;
             }
-            .file-item:hover {
-                background: #e9ecef;
-                box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+
+            .logo {
+                font-size: 24px;
+                font-weight: 700;
+                color: #1a1a1a;
+                text-decoration: none;
             }
-            .file-info {
+
+            .logo span {
+                color: #2ecc71;
+            }
+
+            .nav-back {
+                background: #1a1a1a;
+                color: white !important;
+                padding: 10px 20px;
+                border-radius: 4px;
+                text-decoration: none;
+                font-weight: 600;
+                transition: all 0.3s;
+            }
+
+            .nav-back:hover {
+                background: #2ecc71;
+                color: white;
+            }
+
+            /* Main Content */
+            .files-container {
+                padding: 120px 0 60px;
+                min-height: 100vh;
+            }
+
+            .section-title {
+                font-size: 42px;
+                font-weight: 700;
+                margin-bottom: 50px;
+                text-align: center;
+                position: relative;
+                padding-bottom: 20px;
+            }
+
+            .section-title::after {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 60px;
+                height: 4px;
+                background: #2ecc71;
+                border-radius: 2px;
+            }
+
+            /* File Category */
+            .file-category {
+                margin-bottom: 50px;
+            }
+
+            .category-header {
                 display: flex;
                 align-items: center;
                 gap: 15px;
-            }
-            .file-icon {
+                margin-bottom: 25px;
                 font-size: 24px;
-                color: #007bff;
-                min-width: 30px;
+                font-weight: 700;
+                color: #1a1a1a;
+                padding-bottom: 15px;
+                border-bottom: 2px solid #2ecc71;
             }
+
+            .category-header i {
+                color: #2ecc71;
+                font-size: 28px;
+            }
+
+            /* File Item */
+            .file-item {
+                background: white;
+                padding: 20px;
+                margin-bottom: 15px;
+                border-radius: 8px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                border-left: 4px solid #2ecc71;
+                transition: all 0.3s;
+                box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            }
+
+            .file-item:hover {
+                transform: translateX(10px);
+                box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            }
+
+            .file-info {
+                display: flex;
+                align-items: center;
+                gap: 20px;
+                flex: 1;
+            }
+
+            .file-icon {
+                font-size: 32px;
+                color: #2ecc71;
+                width: 50px;
+                text-align: center;
+            }
+
             .file-details h4 {
                 margin: 0;
                 font-weight: 600;
+                color: #1a1a1a;
+                margin-bottom: 5px;
             }
+
             .file-details p {
                 margin: 0;
                 font-size: 12px;
-                color: #666;
+                color: #999;
             }
+
             .download-btn {
-                background: #007bff;
+                background: #2ecc71;
                 color: white;
                 border: none;
-                padding: 8px 16px;
+                padding: 10px 20px;
                 border-radius: 4px;
                 cursor: pointer;
                 font-size: 14px;
-                transition: all 0.3s ease;
-            }
-            .download-btn:hover {
-                background: #0056b3;
+                font-weight: 600;
+                transition: all 0.3s;
                 text-decoration: none;
+                display: inline-flex;
+                align-items: center;
+                gap: 8px;
+            }
+
+            .download-btn:hover {
+                background: #27ae60;
+                transform: translateY(-2px);
+                box-shadow: 0 5px 15px rgba(46, 204, 113, 0.3);
                 color: white;
             }
+
             .no-files {
+                background: white;
                 text-align: center;
                 padding: 40px;
+                border-radius: 8px;
                 color: #999;
+                border-left: 4px solid #ddd;
+            }
+
+            /* Loading State */
+            .loading {
+                text-align: center;
+                padding: 40px;
+                color: #666;
+            }
+
+            .loading i {
+                animation: spin 1s linear infinite;
+                color: #2ecc71;
+                margin-right: 10px;
+            }
+
+            @keyframes spin {
+                0% { transform: rotate(0deg); }
+                100% { transform: rotate(360deg); }
+            }
+
+            /* Footer */
+            .footer {
+                background: #1a1a1a;
+                color: white;
+                text-align: center;
+                padding: 30px 0;
+                font-size: 13px;
+                margin-top: 60px;
+            }
+
+            /* Responsive */
+            @media (max-width: 768px) {
+                .file-item {
+                    flex-direction: column;
+                    align-items: flex-start;
+                }
+
+                .download-btn {
+                    margin-top: 15px;
+                    width: 100%;
+                    justify-content: center;
+                }
+
+                .section-title {
+                    font-size: 28px;
+                }
             }
         </style>
 
@@ -94,124 +251,204 @@
     
     <body>  
 
-        <!-- Navigation Start -->
-        <header class="top-area">
-            <div class="header-area">
-                <nav class="navbar navbar-default bootsnav navbar-fixed dark no-background">
-                    <div class="container">
-                        <div class="navbar-header">
-                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
-                                <i class="fa fa-bars"></i>
-                            </button>
-                            <a class="navbar-brand" href="index.html">&lt;Devin&gt;</a>
-                        </div>
-                        <div class="collapse navbar-collapse menu-ui-design" id="navbar-menu">
-                            <ul class="nav navbar-nav navbar-right">
-                                <li><a href="index.html">Back to Resume</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </nav>
-            </div>
-        </header>
-        <!-- Navigation End -->
-
-        <!-- Files Section Start -->
-        <section class="files-section">
+        <!-- Navigation -->
+        <div class="navbar-custom">
             <div class="container">
-                <div class="section-heading text-center">
-                    <h2>Resources & Tools</h2>
-                    <div class="heading-line"></div>
-                </div>
+                <a href="index.html" class="logo"><span>&lt;</span>Devin<span>/&gt;</span></a>
+                <a href="index.html" class="nav-back"><i class="fa fa-arrow-left"></i> Back to Resume</a>
+            </div>
+        </div>
 
-                <div class="row" style="margin-top: 40px;">
-                    <div class="col-md-10 col-md-offset-1">
+        <!-- Files Section -->
+        <section class="files-container">
+            <div class="container">
+                <h2 class="section-title">Resources & Tools</h2>
 
-                        <!-- Tools Category -->
-                        <div class="file-category">
-                            <h3><i class="fa fa-wrench"></i> Tools</h3>
-                            <div class="file-item">
-                                <div class="file-info">
-                                    <div class="file-icon"><i class="fa fa-file-zip-o"></i></div>
-                                    <div class="file-details">
-                                        <h4>Network Analysis Toolkit</h4>
-                                        <p>Collection of network security and analysis tools</p>
-                                    </div>
-                                </div>
-                                <a href="#" class="download-btn" onclick="alert('Tool not yet available'); return false;">
-                                    <i class="fa fa-download"></i> Download
-                                </a>
-                            </div>
-                            <div class="no-files">
-                                <p>More tools coming soon...</p>
-                            </div>
-                        </div>
-
-                        <!-- ISOs Category -->
-                        <div class="file-category">
-                            <h3><i class="fa fa-compact-disc"></i> ISOs</h3>
-                            <div class="no-files">
-                                <p>ISO files available upon request</p>
-                            </div>
-                        </div>
-
-                        <!-- Documentation Category -->
-                        <div class="file-category">
-                            <h3><i class="fa fa-file-text-o"></i> Documentation</h3>
-                            <div class="file-item">
-                                <div class="file-info">
-                                    <div class="file-icon"><i class="fa fa-file-pdf-o"></i></div>
-                                    <div class="file-details">
-                                        <h4>IT Security Best Practices Guide</h4>
-                                        <p>PDF • 2.5 MB</p>
-                                    </div>
-                                </div>
-                                <a href="#" class="download-btn" onclick="alert('Document not yet available'); return false;">
-                                    <i class="fa fa-download"></i> Download
-                                </a>
-                            </div>
-                            <div class="no-files">
-                                <p>More documentation coming soon...</p>
-                            </div>
-                        </div>
-
-                        <!-- Scripts Category -->
-                        <div class="file-category">
-                            <h3><i class="fa fa-code"></i> Scripts</h3>
-                            <div class="no-files">
-                                <p>Scripts and automation tools available upon request</p>
-                            </div>
-                        </div>
-
-                        <!-- Other Category -->
-                        <div class="file-category">
-                            <h3><i class="fa fa-folder"></i> Other</h3>
-                            <div class="no-files">
-                                <p>Additional resources coming soon...</p>
-                            </div>
-                        </div>
-
+                <div id="filesContent">
+                    <div class="loading">
+                        <i class="fa fa-spinner fa-spin"></i> Loading resources...
                     </div>
                 </div>
             </div>
         </section>
-        <!-- Files Section End -->
 
-        <!-- Footer Start -->
+        <!-- Footer -->
         <footer class="footer">
             <div class="container">
-                <div class="footer-content text-center">
-                    <p>&copy; 2026 Devin Loyo. All rights reserved.</p>
-                </div>
+                <p>&copy; 2026 Devin Loyo. All rights reserved.</p>
             </div>
         </footer>
-        <!-- Footer End -->
 
         <!-- Scripts -->
         <script src="assets/js/jquery.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
-        <script src="assets/js/bootstrap.min.js"></script>
-        <script src="assets/js/bootsnav.js"></script>
+        <script>
+            const GITHUB_API = 'https://api.github.com/repos/Dev3131/DevinLoyo.com/contents/resources';
+            const GITHUB_RAW = 'https://raw.githubusercontent.com/Dev3131/DevinLoyo.com/main/resources';
+            
+            // File type to icon mapping
+            const fileIcons = {
+                'exe': 'fa-windows',
+                'zip': 'fa-file-zip-o',
+                'pdf': 'fa-file-pdf-o',
+                'doc': 'fa-file-word-o',
+                'docx': 'fa-file-word-o',
+                'xls': 'fa-file-excel-o',
+                'xlsx': 'fa-file-excel-o',
+                'py': 'fa-file-code-o',
+                'js': 'fa-file-code-o',
+                'sh': 'fa-file-code-o',
+                'bat': 'fa-file-code-o',
+                'ps1': 'fa-file-code-o',
+                'iso': 'fa-compact-disc',
+                'img': 'fa-compact-disc',
+                'txt': 'fa-file-text-o',
+                'md': 'fa-file-text-o',
+                '7z': 'fa-file-archive-o',
+                'rar': 'fa-file-archive-o',
+                'tar': 'fa-file-archive-o',
+                'gz': 'fa-file-archive-o'
+            };
+
+            // Category to icon mapping
+            const categoryIcons = {
+                'tools': 'fa-wrench',
+                'isos': 'fa-compact-disc',
+                'documentation': 'fa-file-text-o',
+                'docs': 'fa-file-text-o',
+                'scripts': 'fa-file-code-o',
+                'other': 'fa-folder'
+            };
+
+            // Format file size
+            function formatFileSize(bytes) {
+                if (bytes === 0) return '0 Bytes';
+                const k = 1024;
+                const sizes = ['Bytes', 'KB', 'MB', 'GB'];
+                const i = Math.floor(Math.log(bytes) / Math.log(k));
+                return Math.round((bytes / Math.pow(k, i)) * 100) / 100 + ' ' + sizes[i];
+            }
+
+            // Get file extension
+            function getFileExtension(filename) {
+                return filename.split('.').pop().toLowerCase();
+            }
+
+            // Get icon for file
+            function getFileIcon(filename) {
+                const ext = getFileExtension(filename);
+                return fileIcons[ext] || 'fa-file-o';
+            }
+
+            // Load files from GitHub
+            async function loadFiles() {
+                try {
+                    const response = await fetch(GITHUB_API);
+                    
+                    if (!response.ok) {
+                        throw new Error('Failed to fetch resources');
+                    }
+
+                    const folders = await response.json();
+                    const categories = {};
+
+                    // Fetch files from each category folder
+                    for (const folder of folders) {
+                        if (folder.type === 'dir') {
+                            const categoryName = folder.name.toLowerCase();
+                            const folderUrl = `${GITHUB_API}/${folder.name}`;
+                            
+                            try {
+                                const folderResponse = await fetch(folderUrl);
+                                if (folderResponse.ok) {
+                                    const files = await folderResponse.json();
+                                    
+                                    // Filter out directories, only get files
+                                    categories[categoryName] = files.filter(f => f.type === 'file');
+                                }
+                            } catch (e) {
+                                console.log(`Could not load ${categoryName} folder`);
+                            }
+                        }
+                    }
+
+                    renderFiles(categories);
+                } catch (error) {
+                    document.getElementById('filesContent').innerHTML = `
+                        <div class="no-files">
+                            <i class="fa fa-exclamation-circle"></i>
+                            <p>Unable to load resources. Please check back later.</p>
+                            <p style="font-size: 12px; margin-top: 10px;">Note: Create a 'resources' folder in your GitHub repository with subfolders (tools, isos, documentation, scripts, other) and add files there.</p>
+                        </div>
+                    `;
+                }
+            }
+
+            // Render files
+            function renderFiles(categories) {
+                let html = '';
+
+                if (Object.keys(categories).length === 0) {
+                    html = `
+                        <div class="no-files">
+                            <i class="fa fa-folder-open"></i>
+                            <p>No resources available yet.</p>
+                            <p style="font-size: 12px; margin-top: 10px;">To add files: Create a 'resources' folder in your GitHub repo with subfolders like 'tools', 'isos', 'documentation', 'scripts', and 'other', then add your files there.</p>
+                        </div>
+                    `;
+                } else {
+                    for (const [category, files] of Object.entries(categories)) {
+                        const categoryIcon = categoryIcons[category] || 'fa-folder';
+                        const categoryTitle = category.charAt(0).toUpperCase() + category.slice(1);
+                        
+                        html += `
+                            <div class="file-category">
+                                <div class="category-header">
+                                    <i class="fa ${categoryIcon}"></i>
+                                    ${categoryTitle}
+                                </div>
+                        `;
+
+                        if (files.length === 0) {
+                            html += `
+                                <div class="no-files">
+                                    <p>No files in this category yet.</p>
+                                </div>
+                            `;
+                        } else {
+                            files.forEach(file => {
+                                const fileIcon = getFileIcon(file.name);
+                                const fileSize = formatFileSize(file.size);
+                                const downloadUrl = `${GITHUB_RAW}/${category}/${file.name}`;
+                                
+                                html += `
+                                    <div class="file-item">
+                                        <div class="file-info">
+                                            <div class="file-icon">
+                                                <i class="fa ${fileIcon}"></i>
+                                            </div>
+                                            <div class="file-details">
+                                                <h4>${file.name}</h4>
+                                                <p>${fileSize}</p>
+                                            </div>
+                                        </div>
+                                        <a href="${downloadUrl}" download class="download-btn">
+                                            <i class="fa fa-download"></i> Download
+                                        </a>
+                                    </div>
+                                `;
+                            });
+                        }
+
+                        html += '</div>';
+                    }
+                }
+
+                document.getElementById('filesContent').innerHTML = html;
+            }
+
+            // Load files when page loads
+            document.addEventListener('DOMContentLoaded', loadFiles);
+        </script>
 
     </body>
     
