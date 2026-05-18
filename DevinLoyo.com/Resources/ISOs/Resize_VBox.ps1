@@ -1,1 +1,0 @@
-.\VBoxManage modifymedium "C:\Users\Devin\OneDrive\VirtualBox_VMs\Thor\Thor.vdi" --resize 51200
