@@ -354,7 +354,7 @@
                     // Fetch files from each category folder
                     for (const folder of folders) {
                         if (folder.type === 'dir') {
-                            const categoryName = folder.name.toLowerCase();
+                            const categoryName = folder.name;
                             const folderUrl = `${GITHUB_API}/${folder.name}`;
                             
                             try {
@@ -418,7 +418,7 @@
                             files.forEach(file => {
                                 const fileIcon = getFileIcon(file.name);
                                 const fileSize = formatFileSize(file.size);
-                                const downloadUrl = `${GITHUB_RAW}/${category}/${file.name}`;
+                                const downloadUrl = `${GITHUB_RAW}/${folder.name}/${file.name}`;
                                 
                                 html += `
                                     <div class="file-item">
