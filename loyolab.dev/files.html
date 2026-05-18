@@ -282,8 +282,8 @@
         <!-- Scripts -->
         <script src="assets/js/jquery.js"></script>
         <script>
-            const GITHUB_API = 'https://api.github.com/repos/Dev3131/loyolab.dev/contents/resources';
-            const GITHUB_RAW = 'https://raw.githubusercontent.com/Dev3131/loyolab.dev/main/resources';
+            const GITHUB_API = 'https://api.github.com/repos/Dev3131/DevinLoyo.com/contents/resources';
+            const GITHUB_RAW = 'https://raw.githubusercontent.com/Dev3131/DevinLoyo.com/main/resources';
             
             // File type to icon mapping
             const fileIcons = {
@@ -354,7 +354,7 @@
                     // Fetch files from each category folder
                     for (const folder of folders) {
                         if (folder.type === 'dir') {
-                            const categoryName = folder.name;
+                            const categoryName = folder.name.toLowerCase();
                             const folderUrl = `${GITHUB_API}/${folder.name}`;
                             
                             try {
@@ -418,7 +418,7 @@
                             files.forEach(file => {
                                 const fileIcon = getFileIcon(file.name);
                                 const fileSize = formatFileSize(file.size);
-                                const downloadUrl = `${GITHUB_RAW}/${folder.name}/${file.name}`;
+                                const downloadUrl = `${GITHUB_RAW}/${category}/${file.name}`;
                                 
                                 html += `
                                     <div class="file-item">
